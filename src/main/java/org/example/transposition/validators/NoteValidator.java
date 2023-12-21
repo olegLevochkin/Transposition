@@ -23,11 +23,11 @@ public class NoteValidator {
             throw new RuntimeException("Invalid note number");
         }
 
-        if (MIN_NOTE_NUMBER.equals(note.getOctaveNumber()) && !isNoteInFirstPartialOctave(note)){
+        if (MIN_OCTAVE_NUMBER.equals(note.getOctaveNumber()) && !isNoteInFirstPartialOctave(note)){
             throw new RuntimeException("Invalid note number for first partial octave");
         }
 
-        if (MIN_NOTE_NUMBER.equals(note.getOctaveNumber()) && note.getNoteNumber() != 1){
+        if (MAX_OCTAVE_NUMBER.equals(note.getOctaveNumber()) && note.getNoteNumber() != 1){
             throw new RuntimeException("Invalid note number for last partial octave");
         }
     }
